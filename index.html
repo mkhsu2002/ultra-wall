@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 電商行銷設計師 Ultra | 作品集展示</title>
+    <meta name="description" content="展示 AI 在電商品牌視覺、廣告素材、商品提案、頁面設計與創意行銷上的整合能力。">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">ULTRA</div>
+            <div class="nav-links">
+                <a href="#showcase">作品集</a>
+                <a href="#contact" class="btn-sm">聯絡合作</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1 class="reveal">AI 電商行銷設計師 Ultra</h1>
+            <p class="tagline reveal">以 AI 驅動的電商行銷與設計提案系統</p>
+            <p class="description reveal">展示 AI 在電商品牌視覺、廣告素材、商品提案、頁面設計與創意行銷上的整合能力。</p>
+            <div class="hero-btns reveal">
+                <a href="#showcase" class="btn-primary">查看作品</a>
+                <a href="#contact" class="btn-secondary">聯絡合作</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter Navigation -->
+    <section id="showcase" class="filters-section">
+        <div class="container">
+            <div class="filter-group reveal">
+                <button class="filter-btn active" data-filter="all">全部</button>
+                <button class="filter-btn" data-filter="ad-creatives">廣告素材</button>
+                <button class="filter-btn" data-filter="marketing-visuals">行銷視覺</button>
+                <button class="filter-btn" data-filter="landing-pages">網頁設計</button>
+                <button class="filter-btn" data-filter="branding">品牌概念</button>
+                <button class="filter-btn" data-filter="social-media">社群行銷</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masonry Showcase Wall -->
+    <main class="showcase-wall">
+        <div class="container">
+            <div id="masonry-grid" class="masonry-grid reveal">
+                <!-- Items will be injected by JavaScript or static for SEO -->
+                <div class="grid-item" data-category="ad-creatives">
+                    <img src="assets/item1.png" alt="Luxury Skincare Ad" loading="lazy">
+                    <div class="overlay"><span>廣告素材</span></div>
+                </div>
+                <div class="grid-item" data-category="landing-pages">
+                    <img src="assets/item2.png" alt="Tech Earbuds Landing" loading="lazy">
+                    <div class="overlay"><span>網頁設計</span></div>
+                </div>
+                <div class="grid-item" data-category="social-media">
+                    <img src="assets/item3.png" alt="Premium Watch Social" loading="lazy">
+                    <div class="overlay"><span>社群行銷</span></div>
+                </div>
+                <div class="grid-item" data-category="branding">
+                    <img src="assets/item4.png" alt="Home Furniture Branding" loading="lazy">
+                    <div class="overlay"><span>品牌概念</span></div>
+                </div>
+                <div class="grid-item" data-category="marketing-visuals">
+                    <img src="assets/item5.png" alt="Coffee Packaging Branding" loading="lazy">
+                    <div class="overlay"><span>行銷視覺</span></div>
+                </div>
+                <div class="grid-item" data-category="landing-pages">
+                    <img src="assets/item6.png" alt="SaaS Dashboard UI" loading="lazy">
+                    <div class="overlay"><span>網頁設計</span></div>
+                </div>
+                <div class="grid-item" data-category="marketing-visuals">
+                    <img src="assets/item7.png" alt="Jewelry Ad Commercial" loading="lazy">
+                    <div class="overlay"><span>行銷視覺</span></div>
+                </div>
+                <div class="grid-item" data-category="ad-creatives">
+                    <img src="assets/item8.png" alt="Sportswear Poster" loading="lazy">
+                    <div class="overlay"><span>廣告素材</span></div>
+                </div>
+                <div class="grid-item" data-category="marketing-visuals">
+                    <img src="assets/item9.png" alt="Interior Design Visualization" loading="lazy">
+                    <div class="overlay"><span>行銷視覺</span></div>
+                </div>
+                <div class="grid-item" data-category="social-media">
+                    <img src="assets/item10.png" alt="Cosmetics Social Flatlay" loading="lazy">
+                    <div class="overlay"><span>社群行銷</span></div>
+                </div>
+                <div class="grid-item" data-category="landing-pages">
+                    <img src="assets/item11.png" alt="E-commerce UI Card" loading="lazy">
+                    <div class="overlay"><span>網頁設計</span></div>
+                </div>
+                <div class="grid-item" data-category="branding">
+                    <img src="assets/item12.png" alt="Geometric Boutique Branding" loading="lazy">
+                    <div class="overlay"><span>品牌概念</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Image Preview Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>與 Ultra 合作</h3>
+                <p>啟動您的 AI 驅動電子商務行銷新紀元</p>
+                <a href="mailto:contact@ultra.ai" class="btn-primary">發送郵件</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AI 電商行銷設計師 Ultra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
