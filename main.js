@@ -101,16 +101,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Search Logic
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase();
-        const filtered = allWorks.filter(w => 
-            w.title.toLowerCase().includes(query) || 
-            translateCategory(w.category).includes(query) ||
-            w.date.includes(query)
-        );
-        renderGrid(filtered);
-    });
+    // 5. Search Logic (Optional - only if input exists)
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtered = allWorks.filter(w => 
+                w.title.toLowerCase().includes(query) || 
+                translateCategory(w.category).includes(query) ||
+                w.date.includes(query)
+            );
+            renderGrid(filtered);
+        });
+    }
 
     // Close on Escape
     document.addEventListener('keydown', (e) => {

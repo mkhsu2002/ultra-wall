@@ -15,32 +15,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="pinterest-theme">
-    <!-- Pinterest Style Header -->
-    <header class="pin-header">
-        <div class="logo-group">
-            <div class="logo">U</div>
-            <nav class="main-nav">
-                <a href="#" class="active">首頁</a>
-                <a href="#">聯絡我們</a>
-            </nav>
+    <!-- Ultra Brand Navbar -->
+    <nav class="ultra-navbar">
+        <div class="navbar-container">
+            <a href="https://ec-ultra-lp.icareu.tw/" class="logo-area">
+                <span class="logo-text">AI 電商行銷設計師 Ultra</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="https://ec-ultra-lp.icareu.tw/#modules" class="nav-link">核心模組</a>
+                <a href="https://ec-ultra-lp.icareu.tw/#targets" class="nav-link">適用對象</a>
+                <a href="https://ec-ultra-lp.icareu.tw/#faq" class="nav-link">常見問題</a>
+                <a href="https://ec-ultra-lp.icareu.tw/articles" class="nav-link">電商小學堂</a>
+                <a href="https://ultra.icareu.tw/" class="cta-button">免費體驗</a>
+            </div>
         </div>
-        
-        <div class="search-container">
-            <span class="material-symbols-outlined search-icon">search</span>
-            <input type="text" placeholder="搜尋行銷素材、頁面設計、品牌概念..." id="search-input">
-        </div>
-        
-        <div class="icon-group">
-            <span class="material-symbols-outlined">notifications</span>
-            <span class="material-symbols-outlined">chat</span>
-            <div class="profile-avatar">M</div>
-            <span class="material-symbols-outlined">expand_more</span>
-        </div>
-    </header>
+    </nav>
 
     <!-- Sub-navigation / Tags -->
-    <div class="sub-nav">
-        <div class="tags-container">
+    <div class="filter-wrapper">
+        <div class="tags-container" id="filters">
             <button class="filter-btn active" data-filter="all">全部</button>
             <button class="filter-btn" data-filter="ad-creatives">廣告素材</button>
             <button class="filter-btn" data-filter="marketing-visuals">行銷視覺</button>
