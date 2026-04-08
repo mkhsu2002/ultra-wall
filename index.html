@@ -3,131 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 電商行銷設計師 Ultra | 作品集展示</title>
-    <meta name="description" content="展示 AI 在電商品牌視覺、廣告素材、商品提案、頁面設計與創意行銷上的整合能力。">
+    <title>Ultra | AI 電商行銷設計師作品集</title>
+    <meta name="description" content="AI 驅動的電商品牌視覺與行銷設計提案展示系統">
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Inter and Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">ULTRA</div>
-            <div class="nav-links">
-                <a href="#showcase">作品集</a>
-                <a href="#contact" class="btn-sm">聯絡合作</a>
-            </div>
+<body class="pinterest-theme">
+    <!-- Pinterest Style Header -->
+    <header class="pin-header">
+        <div class="logo-group">
+            <div class="logo">U</div>
+            <nav class="main-nav">
+                <a href="#" class="active">首頁</a>
+                <a href="#">建立</a>
+            </nav>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <h1 class="reveal">AI 電商行銷設計師 Ultra</h1>
-            <p class="tagline reveal">以 AI 驅動的電商行銷與設計提案系統</p>
-            <p class="description reveal">展示 AI 在電商品牌視覺、廣告素材、商品提案、頁面設計與創意行銷上的整合能力。</p>
-            <div class="hero-btns reveal">
-                <a href="#showcase" class="btn-primary">查看作品</a>
-                <a href="#contact" class="btn-secondary">聯絡合作</a>
-            </div>
+        
+        <div class="search-container">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" placeholder="搜尋行銷素材、頁面設計、品牌概念..." id="search-input">
+        </div>
+        
+        <div class="icon-group">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="material-symbols-outlined">chat</span>
+            <div class="profile-avatar">M</div>
+            <span class="material-symbols-outlined">expand_more</span>
         </div>
     </header>
 
-    <!-- Filter Navigation -->
-    <section id="showcase" class="filters-section">
-        <div class="container">
-            <div class="filter-group reveal">
-                <button class="filter-btn active" data-filter="all">全部</button>
-                <button class="filter-btn" data-filter="ad-creatives">廣告素材</button>
-                <button class="filter-btn" data-filter="marketing-visuals">行銷視覺</button>
-                <button class="filter-btn" data-filter="landing-pages">網頁設計</button>
-                <button class="filter-btn" data-filter="branding">品牌概念</button>
-                <button class="filter-btn" data-filter="social-media">社群行銷</button>
-            </div>
+    <!-- Sub-navigation / Tags -->
+    <div class="sub-nav">
+        <div class="tags-container">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="ad-creatives">廣告素材</button>
+            <button class="filter-btn" data-filter="marketing-visuals">行銷視覺</button>
+            <button class="filter-btn" data-filter="landing-pages">網頁設計</button>
+            <button class="filter-btn" data-filter="branding">品牌概念</button>
+            <button class="filter-btn" data-filter="social-media">社群行銷</button>
         </div>
-    </section>
+    </div>
 
-    <!-- Masonry Showcase Wall -->
-    <main class="showcase-wall">
-        <div class="container">
-            <div id="masonry-grid" class="masonry-grid reveal">
-                <!-- Items will be injected by JavaScript or static for SEO -->
-                <div class="grid-item" data-category="ad-creatives">
-                    <img src="assets/item1.png" alt="Luxury Skincare Ad" loading="lazy">
-                    <div class="overlay"><span>廣告素材</span></div>
+    <!-- Main Grid -->
+    <main class="main-content">
+        <div id="masonry-grid" class="masonry-grid">
+            <!-- Using Unsplash for guaranteed display in this environment -->
+            <div class="grid-item" data-category="ad-creatives">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800" alt="Luxury Skincare" loading="lazy">
+                <div class="item-overlay">
+                    <button class="save-btn">儲存</button>
                 </div>
-                <div class="grid-item" data-category="landing-pages">
-                    <img src="assets/item2.png" alt="Tech Earbuds Landing" loading="lazy">
-                    <div class="overlay"><span>網頁設計</span></div>
-                </div>
-                <div class="grid-item" data-category="social-media">
-                    <img src="assets/item3.png" alt="Premium Watch Social" loading="lazy">
-                    <div class="overlay"><span>社群行銷</span></div>
-                </div>
-                <div class="grid-item" data-category="branding">
-                    <img src="assets/item4.png" alt="Home Furniture Branding" loading="lazy">
-                    <div class="overlay"><span>品牌概念</span></div>
-                </div>
-                <div class="grid-item" data-category="marketing-visuals">
-                    <img src="assets/item5.png" alt="Coffee Packaging Branding" loading="lazy">
-                    <div class="overlay"><span>行銷視覺</span></div>
-                </div>
-                <div class="grid-item" data-category="landing-pages">
-                    <img src="assets/item6.png" alt="SaaS Dashboard UI" loading="lazy">
-                    <div class="overlay"><span>網頁設計</span></div>
-                </div>
-                <div class="grid-item" data-category="marketing-visuals">
-                    <img src="assets/item7.png" alt="Jewelry Ad Commercial" loading="lazy">
-                    <div class="overlay"><span>行銷視覺</span></div>
-                </div>
-                <div class="grid-item" data-category="ad-creatives">
-                    <img src="assets/item8.png" alt="Sportswear Poster" loading="lazy">
-                    <div class="overlay"><span>廣告素材</span></div>
-                </div>
-                <div class="grid-item" data-category="marketing-visuals">
-                    <img src="assets/item9.png" alt="Interior Design Visualization" loading="lazy">
-                    <div class="overlay"><span>行銷視覺</span></div>
-                </div>
-                <div class="grid-item" data-category="social-media">
-                    <img src="assets/item10.png" alt="Cosmetics Social Flatlay" loading="lazy">
-                    <div class="overlay"><span>社群行銷</span></div>
-                </div>
-                <div class="grid-item" data-category="landing-pages">
-                    <img src="assets/item11.png" alt="E-commerce UI Card" loading="lazy">
-                    <div class="overlay"><span>網頁設計</span></div>
-                </div>
-                <div class="grid-item" data-category="branding">
-                    <img src="assets/item12.png" alt="Geometric Boutique Branding" loading="lazy">
-                    <div class="overlay"><span>品牌概念</span></div>
-                </div>
+            </div>
+            <div class="grid-item" data-category="landing-pages">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800" alt="Tech Gadget" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+            <div class="grid-item" data-category="social-media">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800" alt="Minimalist Watch" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+            <div class="grid-item" data-category="branding">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800" alt="Living Room Design" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+            <div class="grid-item" data-category="marketing-visuals">
+                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=80&w=800" alt="Coffee Aesthetic" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+            <div class="grid-item" data-category="landing-pages">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="SaaS UI" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+             <div class="grid-item" data-category="marketing-visuals">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb0ce33e?auto=format&fit=crop&q=80&w=800" alt="Luxury Jewelry" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+            <div class="grid-item" data-category="ad-creatives">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800" alt="Sports Shoes" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+            <div class="grid-item" data-category="marketing-visuals">
+                <img src="https://images.unsplash.com/photo-1616489953149-75517454f8a9?auto=format&fit=crop&q=80&w=800" alt="Luxury Interior" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+            <div class="grid-item" data-category="social-media">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=800" alt="Beauty Flatlay" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+            <div class="grid-item" data-category="landing-pages">
+                <img src="https://images.unsplash.com/photo-1556656793-062ff9878258?auto=format&fit=crop&q=80&w=800" alt="Smartphone Branding" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
+            </div>
+            <div class="grid-item" data-category="branding">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800" alt="Abstract Branding" loading="lazy">
+                <div class="item-overlay"><button class="save-btn">儲存</button></div>
             </div>
         </div>
     </main>
 
-    <!-- Image Preview Modal -->
+    <!-- Modal Lightbox -->
     <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-    </div>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <h3>與 Ultra 合作</h3>
-                <p>啟動您的 AI 驅動電子商務行銷新紀元</p>
-                <a href="mailto:contact@ultra.ai" class="btn-primary">發送郵件</a>
+        <div class="lightbox-card">
+            <div class="lightbox-img-container">
+                <img id="lightbox-img" src="" alt="">
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 AI 電商行銷設計師 Ultra. All rights reserved.</p>
+            <div class="lightbox-info">
+                <button class="save-btn large">儲存作品</button>
             </div>
         </div>
-    </footer>
+    </div>
 
     <script src="main.js"></script>
 </body>
