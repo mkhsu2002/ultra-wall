@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     
     <link rel="stylesheet" href="style.css">
+    <!-- Netlify Identity Widget for Decap CMS -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="pinterest-theme">
     <!-- Pinterest Style Header -->
@@ -21,7 +23,7 @@
             <div class="logo">U</div>
             <nav class="main-nav">
                 <a href="#" class="active">首頁</a>
-                <a href="#">建立</a>
+                <a href="/admin/">管理作品</a>
             </nav>
         </div>
         
@@ -53,57 +55,8 @@
     <!-- Main Grid -->
     <main class="main-content">
         <div id="masonry-grid" class="masonry-grid">
-            <!-- Using Unsplash for guaranteed display in this environment -->
-            <div class="grid-item" data-category="ad-creatives">
-                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800" alt="Luxury Skincare" loading="lazy">
-                <div class="item-overlay">
-                    <button class="save-btn">儲存</button>
-                </div>
-            </div>
-            <div class="grid-item" data-category="landing-pages">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800" alt="Tech Gadget" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-            <div class="grid-item" data-category="social-media">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800" alt="Minimalist Watch" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-            <div class="grid-item" data-category="branding">
-                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800" alt="Living Room Design" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-            <div class="grid-item" data-category="marketing-visuals">
-                <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=80&w=800" alt="Coffee Aesthetic" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-            <div class="grid-item" data-category="landing-pages">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="SaaS UI" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-             <div class="grid-item" data-category="marketing-visuals">
-                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb0ce33e?auto=format&fit=crop&q=80&w=800" alt="Luxury Jewelry" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-            <div class="grid-item" data-category="ad-creatives">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800" alt="Sports Shoes" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-            <div class="grid-item" data-category="marketing-visuals">
-                <img src="https://images.unsplash.com/photo-1616489953149-75517454f8a9?auto=format&fit=crop&q=80&w=800" alt="Luxury Interior" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-            <div class="grid-item" data-category="social-media">
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=800" alt="Beauty Flatlay" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-            <div class="grid-item" data-category="landing-pages">
-                <img src="https://images.unsplash.com/photo-1556656793-062ff9878258?auto=format&fit=crop&q=80&w=800" alt="Smartphone Branding" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
-            <div class="grid-item" data-category="branding">
-                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800" alt="Abstract Branding" loading="lazy">
-                <div class="item-overlay"><button class="save-btn">儲存</button></div>
-            </div>
+            <!-- Loading state -->
+            <div class="loading-state">載入作品中...</div>
         </div>
     </main>
 
@@ -114,11 +67,26 @@
                 <img id="lightbox-img" src="" alt="">
             </div>
             <div class="lightbox-info">
-                <button class="save-btn large">儲存作品</button>
+                 <div class="info-header">
+                    <h3 id="lightbox-title">作品標題</h3>
+                    <p id="lightbox-category">分類</p>
+                </div>
+                <button class="save-btn large">儲存作品集</button>
             </div>
         </div>
     </div>
 
     <script src="main.js"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>

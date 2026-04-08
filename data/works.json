@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1",
+    "title": "Luxury Skincare Ad",
+    "image": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
+    "category": "ad-creatives",
+    "date": "2026-04-01"
+  },
+  {
+    "id": "2",
+    "title": "Tech Earbuds Landing",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800",
+    "category": "landing-pages",
+    "date": "2026-04-02"
+  },
+  {
+    "id": "3",
+    "title": "Premium Watch Social",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800",
+    "category": "social-media",
+    "date": "2026-04-03"
+  },
+  {
+    "id": "4",
+    "title": "Home Furniture Branding",
+    "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800",
+    "category": "branding",
+    "date": "2026-04-04"
+  },
+  {
+    "id": "5",
+    "title": "Coffee Packaging Branding",
+    "image": "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&q=80&w=800",
+    "category": "marketing-visuals",
+    "date": "2026-04-05"
+  },
+  {
+    "id": "6",
+    "title": "SaaS Dashboard UI",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    "category": "landing-pages",
+    "date": "2026-04-06"
+  },
+  {
+    "id": "7",
+    "title": "Luxury Jewelry Commercial",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb0ce33e?auto=format&fit=crop&q=80&w=800",
+    "category": "marketing-visuals",
+    "date": "2026-04-07"
+  },
+  {
+    "id": "8",
+    "title": "Sportswear Poster",
+    "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800",
+    "category": "ad-creatives",
+    "date": "2026-04-08"
+  },
+  {
+    "id": "9",
+    "title": "Luxury Interior Design",
+    "image": "https://images.unsplash.com/photo-1616489953149-75517454f8a9?auto=format&fit=crop&q=80&w=800",
+    "category": "marketing-visuals",
+    "date": "2026-04-08"
+  },
+  {
+    "id": "10",
+    "title": "Cosmetics Social Flatlay",
+    "image": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=800",
+    "category": "social-media",
+    "date": "2026-04-08"
+  },
+  {
+    "id": "11",
+    "title": "E-commerce UI Card",
+    "image": "https://images.unsplash.com/photo-1556656793-062ff9878258?auto=format&fit=crop&q=80&w=800",
+    "category": "landing-pages",
+    "date": "2026-04-08"
+  },
+  {
+    "id": "12",
+    "title": "Abstract Branding Identity",
+    "image": "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=800",
+    "category": "branding",
+    "date": "2026-04-08"
+  }
+]

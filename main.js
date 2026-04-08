@@ -1,96 +1,122 @@
 /**
- * AI 電商行銷設計師 Ultra - Interactive Script
+ * Ultra - Pinterest Style Dynamic Grid
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Reveal Animations on Scroll
-    const reveals = document.querySelectorAll('.reveal, .grid-item');
-    
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        reveals.forEach(el => {
-            const revealTop = el.getBoundingClientRect().top;
-            const revealPoint = 100;
-            
-            if (revealTop < windowHeight - revealPoint) {
-                el.classList.add('active');
-                if (el.classList.contains('grid-item')) {
-                    el.classList.add('visible');
-                }
-            }
-        });
-    };
-
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Trigger once on load
-
-    // 2. Category Filtering Logic
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const gridItems = document.querySelectorAll('.grid-item');
-    const masonryGrid = document.getElementById('masonry-grid');
-
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Remove active class from all buttons
-            filterButtons.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
-
-            const filterValue = btn.getAttribute('data-filter');
-
-            gridItems.forEach(item => {
-                const category = item.getAttribute('data-category');
-                
-                // Hide or show based on filter
-                if (filterValue === 'all' || category === filterValue) {
-                    item.classList.remove('filtered-out');
-                    // Small delay for fade in animation
-                    setTimeout(() => {
-                        item.classList.add('visible');
-                    }, 50);
-                } else {
-                    item.classList.add('filtered-out');
-                    item.classList.remove('visible');
-                }
-            });
-
-            // Re-trigger reveal check
-            revealOnScroll();
-        });
-    });
-
-    // 3. Lightbox Logic
+    const grid = document.getElementById('masonry-grid');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const closeLightbox = document.querySelector('.close-lightbox');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxCategory = document.getElementById('lightbox-category');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('search-input');
 
-    gridItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const img = item.querySelector('img');
-            lightboxImg.src = img.src;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Disable scroll
+    let allWorks = [];
+
+    // 1. Fetch Works Data
+    fetch('data/works.json')
+        .then(response => response.json())
+        .then(data => {
+            // Sort by Date Descending (Newest First)
+            allWorks = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+            renderGrid(allWorks);
+        })
+        .catch(err => {
+            console.error('Error loading works:', err);
+            grid.innerHTML = '<p class="error">暫時無法載入作品，請稍後再試。</p>';
         });
-    });
 
-    const closeLightboxHandler = () => {
-        lightbox.classList.remove('active');
-        document.body.style.overflow = ''; // Enable scroll
-    };
+    // 2. Render Grid Function
+    function renderGrid(works) {
+        grid.innerHTML = '';
+        if (works.length === 0) {
+            grid.innerHTML = '<p class="no-results">找不到相關作品。</p>';
+            return;
+        }
 
-    closeLightbox.addEventListener('click', closeLightboxHandler);
-    
-    // Close on click outside image
+        works.forEach((item, index) => {
+            const gridItem = document.createElement('div');
+            gridItem.className = 'grid-item';
+            gridItem.dataset.category = item.category;
+            gridItem.style.animationDelay = `${index * 0.05}s`;
+
+            gridItem.innerHTML = `
+                <img src="${item.image}" alt="${item.title}" loading="lazy">
+                <div class="item-overlay">
+                    <button class="save-btn">儲存</button>
+                    <div class="item-meta">
+                         <span class="item-title-hover">${item.title}</span>
+                         <span class="item-date">${item.date}</span>
+                    </div>
+                </div>
+            `;
+
+            gridItem.addEventListener('click', () => openLightbox(item));
+            grid.appendChild(gridItem);
+        });
+    }
+
+    // 3. Lightbox Logic
+    function openLightbox(item) {
+        lightboxImg.src = item.image;
+        lightboxTitle.textContent = item.title;
+        lightboxCategory.textContent = translateCategory(item.category) + ' • ' + item.date;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function translateCategory(cat) {
+        const mapping = {
+            'ad-creatives': '廣告素材',
+            'marketing-visuals': '行銷視覺',
+            'landing-pages': '網頁設計',
+            'branding': '品牌概念',
+            'social-media': '社群行銷'
+        };
+        return mapping[cat] || cat;
+    }
+
     lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightboxHandler();
+        if (e.target === lightbox || e.target.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
     });
 
-    // Close on Escape key
+    // 4. Filtering Logic
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            
+            // UI Toggle
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Data Filter
+            const filtered = filter === 'all' 
+                ? allWorks 
+                : allWorks.filter(w => w.category === filter);
+            
+            renderGrid(filtered);
+        });
+    });
+
+    // 5. Search Logic
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        const filtered = allWorks.filter(w => 
+            w.title.toLowerCase().includes(query) || 
+            translateCategory(w.category).includes(query) ||
+            w.date.includes(query)
+        );
+        renderGrid(filtered);
+    });
+
+    // Close on Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-            closeLightboxHandler();
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
     });
 });
