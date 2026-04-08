@@ -1,0 +1,13 @@
+{
+  "name": "ultra-wall",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI 電商行銷設計師 Ultra 作品集展示牆",
+  "scripts": {
+    "build": "echo 'No build step required for static site'",
+    "start": "python3 -m http.server 8000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

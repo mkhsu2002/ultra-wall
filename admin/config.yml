@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: mkhsu2002/ultra-wall # 您的 GitHub 倉庫路徑
   branch: main
 
 media_folder: "assets"
