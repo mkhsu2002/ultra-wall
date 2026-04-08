@@ -159,5 +159,54 @@
     "category": "ad-creatives",
     "date": "2026-04-08",
     "id": "23"
+  },
+  {
+    "title": "story_9x16_08_cta",
+    "image": "assets/work_20260408_002032_000.png",
+    "category": "branding",
+    "date": "2026-04-08",
+    "id": "24"
+  },
+  {
+    "title": "concept-poster-2-9x16",
+    "image": "assets/work_20260408_002032_001.png",
+    "category": "branding",
+    "date": "2026-04-08",
+    "id": "25"
+  },
+  {
+    "title": "story_9x16_03_solution",
+    "image": "assets/work_20260408_002032_002.png",
+    "category": "branding",
+    "date": "2026-04-08",
+    "id": "26"
+  },
+  {
+    "title": "concept-poster-3-9x16 (3)",
+    "image": "assets/work_20260408_002032_003.png",
+    "category": "branding",
+    "date": "2026-04-08",
+    "id": "27"
+  },
+  {
+    "title": "concept-poster-1-9x16 (2)",
+    "image": "assets/work_20260408_002032_004.png",
+    "category": "branding",
+    "date": "2026-04-08",
+    "id": "28"
+  },
+  {
+    "title": "concept-poster-2-3x4",
+    "image": "assets/work_20260408_002032_005.png",
+    "category": "branding",
+    "date": "2026-04-08",
+    "id": "29"
+  },
+  {
+    "title": "story_9x16_06_cta",
+    "image": "assets/work_20260408_002032_006.png",
+    "category": "branding",
+    "date": "2026-04-08",
+    "id": "30"
   }
 ]
