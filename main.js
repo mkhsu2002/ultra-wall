@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxCategory = document.getElementById('lightbox-category');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const searchInput = document.getElementById('search-input');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const menuIcon = menuToggle.querySelector('.material-symbols-outlined');
 
     let allWorks = [];
 
@@ -116,9 +119,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close on Escape
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
+        if (e.key === 'Escape') {
+            if (lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+            if (navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
         }
+    });
+
+    // Mobile Menu Toggle Logic
+    function toggleMenu() {
+        navLinks.classList.toggle('active');
+        const isActive = navLinks.classList.contains('active');
+        menuIcon.textContent = isActive ? 'close' : 'menu';
+        document.body.style.overflow = isActive ? 'hidden' : 'auto';
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking on a link (mobile)
+    navLinks.querySelectorAll('.nav-link, .cta-button').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
     });
 });
