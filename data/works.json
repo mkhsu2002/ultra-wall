@@ -334,5 +334,26 @@
     "category": "ad-creatives",
     "date": "2026-04-08",
     "id": "48"
+  },
+  {
+    "title": "story_9x16_03_lifestyle",
+    "image": "assets/work_20260408_002610_000.png",
+    "category": "marketing-visuals",
+    "date": "2026-04-08",
+    "id": "49"
+  },
+  {
+    "title": "concept-poster-2-9x16",
+    "image": "assets/work_20260408_002610_001.png",
+    "category": "marketing-visuals",
+    "date": "2026-04-08",
+    "id": "50"
+  },
+  {
+    "title": "concept-poster-3-9x16 (1)",
+    "image": "assets/work_20260408_002610_002.png",
+    "category": "marketing-visuals",
+    "date": "2026-04-08",
+    "id": "51"
   }
 ]
